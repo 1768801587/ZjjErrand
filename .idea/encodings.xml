@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/com/dao/UserDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/filter/EncodingFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/servlet/DemandReleaseServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/servlet/DemandReleaseServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/servlet/ReleaseServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/css/visitor.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/login.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/register.html" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

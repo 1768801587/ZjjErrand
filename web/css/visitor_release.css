@@ -1,0 +1,71 @@
+* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+        
+		.first {
+			width: 1200px;
+			height: 60px;
+			background-color: darkslategray;
+		}
+
+		.first .text1 {
+			font-size: 35px;
+			color: wheat;
+			position: absolute;
+			left: 520px;
+		}
+
+		.second {
+			background-color: gray;
+			height: 300px;
+			width: 520px;
+			position: absolute;
+			top: 200px;
+			left: 350px;
+			filter: alpha(opacity=100);
+			/*透明度*/
+			/*IE*/
+			opacity: 0.6;
+			/*Mozilla*/
+		}
+
+		.second .demandForm {
+			position: absolute;
+			top: 20px;
+			left: 100px;
+		}
+
+		.second .demandWords {
+			font-size: 25px;
+			position: absolute;
+			left: 100px;
+		}
+
+		.second .demandText {
+			font-size: 25px;
+
+		}
+		.second .demandText:hover {
+			border-color: red;
+			border-width: 4px;
+		    
+		}
+
+		.second .demandButton {
+			font-size: 35px;
+			font-weight: 800;
+			bottom: -65px;
+			left: 110px;
+			position: absolute;
+			color: wheat;
+			background-color: #0A7369;
+
+		}
+
+		.second .demandButton:hover {
+			color: #0A7369;
+			background: none;
+		}

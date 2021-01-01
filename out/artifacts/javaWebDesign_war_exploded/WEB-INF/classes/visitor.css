@@ -1,0 +1,72 @@
+body{
+    background-size: contain;
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.zjj{
+    font-size: 35px;
+    position: absolute;
+    left: 200px;
+    color: wheat;
+}
+.zjj1{
+    font-size: 20px;
+    position: absolute;
+    left: 520px;
+    top: 18px;
+    color: wheat;
+}
+.visitor {
+    position: relative;
+}
+
+.top {
+    position: absolute;
+    height: 50px;
+    width: 1920px;
+    background-color: darkslategray;
+}
+
+.top label{
+    color: white;
+}
+
+.top .firstA {
+    position: absolute;
+    right: 400px;
+    top: 10px;
+}
+
+.top .secondA {
+    position: absolute;
+    right: 250px;
+    top: 10px;
+}
+
+.top .thridA {
+    position: absolute;
+    right: 100px;
+    top: 10px;
+}
+
+.top .fourthA {
+    position: absolute;
+    right: 550px;
+    top: 10px;
+}
+
+.top label:hover{
+    font-size: 20px;
+    color: wheat;
+}
+
+.jm {
+    position: absolute;
+    top: 120px;
+    left: 350px;
+
+}
