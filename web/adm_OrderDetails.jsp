@@ -39,8 +39,9 @@
     <tr>
         <th>接受者姓名</th>
         <th>完成时间</th>
-        <th>是否完成</th>
-
+        <th>是否已完成</th>
+        <th>是否已支付</th>
+        <th>是否已评价</th>
     </tr>
 
     <tr>
@@ -49,21 +50,41 @@
         <td><c:if test="${findOrder.finished_time!=null}">已完成</c:if><%--判断是否完成--%>
             <c:if test="${findOrder.finished_time==null}">未完成</c:if>
         </td>
-
+        <td><c:if test="${findOrder.finished_time==null||findOrder.isPay==0}">未支付</c:if>
+            <c:if test="${findOrder.isPay!=0}">已支付</c:if>
+        </td>
+        <td><c:if test="${findOrder.isPay==0||findOrder.isEva==0}"> 未评价</c:if><%--isEva=0是未进行评价--%>
+            <c:if test="${findOrder.isEva!=0}">已评论</c:if>
+        </td>
     </tr>
 </table>
 <hr>
-<div class="evaluateContent" style=" border-color: #FFFFFF;border:1px;width: 300px" >
-    <h3>评论</h3>
-    <form action="Visitor_EvaluateServlet?step=2" method="post">
+<div class="evaluateContent" style=" border-color: #FFFFFF;border:1px;width: 500px" >
 
-        <label>内容:</label><textarea name="eva_content" rows="3"></textarea>
-        <hr>
-        <input type="submit" value="提交"/>
-    </form>
+    <span>已有评论</span><br>
+
+    <%--    如果订单已评论，则循坏打印出--%>
+    <c:if test="${findOrder.isEva==1}">
+        <c:forEach var="U" items="${orderAllEva}"  >
+
+            <%--@elvariable id="findOrder" type="com.bean.Order"--%>
+            <c:if test="${U.order_id==findOrder.order_id}">
+                <span><b>${U.u_name}发表评论:</b></span><br>
+                <span>${U.eva_content}</span>
+                <span>—————${U.eva_time}</span>
+            </c:if><%--判断是否已经有评论,--%>
+            <br>
+            <hr>
+        </c:forEach>
+    </c:if>
+    <c:if test="${findOrder.isEva==0}">
+        <span><b>暂时还没有评论</b></span>
+    </c:if>
 </div>
 <div>
-    <a style="font-size: larger;color:black" href="Visitor_showOrderServlet?flag=2&id=${findOrder.order_id}">返回上一级</a>
+    <br><hr><br>
+
+    <a style="font-size: larger;color:wheat" href="AdmServlet?flag=2">返回上一级</a>
 </div>
 </body>
 </html>

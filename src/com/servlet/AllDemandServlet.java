@@ -24,10 +24,8 @@ public class AllDemandServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session=request.getSession();
         DemandDao dd = new DemandDao();
-        List<Demand> AllDemand = dd.getAllDemand();//通过DemandDao对象从数据库中找到所有当前用户发布的需求
+        List<Demand> AllDemand = dd.getAllDemand();//通过DemandDao对象从数据库中找到所有用户发布的需求
         session.setAttribute("personalAllDemand", AllDemand);
-
-        User user=(User)session.getAttribute("loginUser");
 
             request.getRequestDispatcher("/Visitor_AllDemand.jsp").forward(request, response);
 

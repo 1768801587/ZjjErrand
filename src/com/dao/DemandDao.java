@@ -25,27 +25,12 @@ public class DemandDao {
         DBconn.closeConn();
         return flag;
     }
-    public boolean login(String phone, String pwd) {
-        boolean flag = false;
-        try {
-            DBconn.init();
-            ResultSet rs = DBconn.selectSql("select * from user where phone='"+phone+"' and pwd='"+pwd+"'");
-            while(rs.next()){
-                if(rs.getString("phone").equals(phone) && rs.getString("pwd").equals(pwd)){
-                    flag = true;
-                }
-            }
-            DBconn.closeConn();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return flag;
-    }
+
     public Demand getOneDemand(int id) {
         Demand demand=new Demand();
         try {
             DBconn.init();
-            ResultSet rs = DBconn.selectSql("select * from demand where demand_id='"+id+"'");
+            ResultSet rs = DBconn.selectSql("select * from `demand` where demand_id='"+id+"'");
             while(rs.next()){
                 demand.setDemand_id(rs.getInt("demand_id"));
                 demand.setU_id(rs.getInt("u_id"));
@@ -66,7 +51,7 @@ public class DemandDao {
         List<Demand> list = new ArrayList<Demand>();
         try {
             DBconn.init();
-            ResultSet rs = DBconn.selectSql("select * from demand ");
+            ResultSet rs = DBconn.selectSql("select * from `demand` ");
             while(rs.next()){
                 Demand demand = new Demand();
                 demand.setDemand_id(rs.getInt("demand_id"));
@@ -90,7 +75,7 @@ public class DemandDao {
         List<Demand> list = new ArrayList<Demand>();
         try {
             DBconn.init();
-            ResultSet rs = DBconn.selectSql("select * from demand where u_id='"+u_id+"'");
+            ResultSet rs = DBconn.selectSql("select * from `demand` where u_id='"+u_id+"'");
             while(rs.next()){
                 Demand demand = new Demand();
                 demand.setDemand_id(rs.getInt("demand_id"));
@@ -113,7 +98,7 @@ public class DemandDao {
     public boolean update(int demand_id,String type, String content,double price) {
         boolean flag = false;
         DBconn.init();
-        String sql =" update demand set dem_contentType ='"+type
+        String sql =" update `demand` set dem_contentType ='"+type
                 +"' , dem_content ='"+content
                 +"' , price ='"+price
                  +"' where demand_id='"+demand_id+"' "
@@ -129,7 +114,7 @@ public class DemandDao {
     public boolean delete(int id) {
         boolean flag = false;
         DBconn.init();
-        String sql = "delete  from demand where demand_id="+id;
+        String sql = "delete  from `demand` where demand_id="+id;
         int i =DBconn.addUpdDel(sql);
         if(i>0){
             flag = true;

@@ -210,7 +210,7 @@ public class OrderDao {
     public boolean delete(int id) {
         boolean flag = false;
         DBconn.init();
-        String sql = "delete  from demand where demand_id="+id;
+        String sql = "delete  from `order` where order_id="+id;
         int i =DBconn.addUpdDel(sql);
         if(i>0){
             flag = true;

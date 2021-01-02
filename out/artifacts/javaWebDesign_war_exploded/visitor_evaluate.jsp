@@ -61,11 +61,9 @@
         <hr>
         <input type="submit" value="提交"/>
     </form>
-
-
 </div>
 <div>
-    <a style="font-size: larger;color:black" href="Visitor_showOrderServlet?demand_id=${finder.demand_id}">返回上一级</a>
+    <a style="font-size: larger;color:black" href="Visitor_showOrderServlet?flag=2&id=${findOrder.order_id}">返回上一级</a>
 </div>
 </body>
 </html>

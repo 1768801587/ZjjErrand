@@ -23,15 +23,15 @@
 <div class="visitor" style="width:630px;float:left;height:500px;">
     <div class="top">
         <span class="zjj">张 家 界 跑 腿 平 台</span>
-        <span class="zjj1">(游客)</span>
+        <span class="zjj1">(管理员)</span>
         <div class="firstA">
-            <a href="#" onclick="document.getElementById('cont0').style.display='block',
+            <a href="AdmServlet?flag=1" target="AdmAllDemand" onclick="document.getElementById('cont0').style.display='block',
 						document.getElementById('cont1').style.display='none',document.getElementById('cont2').style.display='none',
 						document.getElementById('cont3').style.display='none';">
-                <label>所有需求(未接单)</label> </a>
+                <label>所有需求</label> </a>
         </div>
         <div class="secondA">
-            <a href="visitor_showDemServlet"  target="visitor_showDemand" onclick="document.getElementById('cont1').style.display='block',
+            <a href="AdmServlet?flag=2"  target="AdmAllOrder" onclick="document.getElementById('cont1').style.display='block',
 						document.getElementById('cont0').style.display='none',document.getElementById('cont2').style.display='none',
 						document.getElementById('cont3').style.display='none'">
                 <label>所有订单</label> </a>
@@ -46,7 +46,7 @@
             <a href="QuitServlet"><label style="font-size: 12px">退出登录</label></a>
         </div>
         <div class="fourthA">
-            <a href="AllDemandServlet" target="allDemand" onclick="document.getElementById('cont3').style.display='block',
+            <a href="AdmServlet?flag=4" target="AdmAllEvaluate" onclick="document.getElementById('cont3').style.display='block',
 					    document.getElementById('cont0').style.display='none',document.getElementById('cont1').style.display='none',
 						document.getElementById('cont2').style.display='none'">
                 <label>所有评论</label> </a>
@@ -54,26 +54,19 @@
         </div>
 
     </div>
-
-    <%--    欢迎登录 ${user.u_name} <br>--%>
-    <%--    <a href="SearchAll">查看所有用户</a>--%>
-
     <div class="jm">
-        <div id="cont0" style="display:block">
-
-            　 <iframe src="AdmServlet?flag=1" width="1200px" height="680"></iframe>
+        <div id="cont0" style="display:none">
+            　 <iframe name="AdmAllDemand" width="1200px" height="680"></iframe>
         </div>
         <div id="cont1" style="display:none">
-            　 <iframe  name="AdmServlet?flag=2" width="1200px" height="680"></iframe>
+            　 <iframe  name="AdmAllOrder" width="1200px" height="680"></iframe>
         </div>
-        <div id="cont2" style="display:none">
-
-            　 <iframe src="PersonalCenter.jsp" width="1200px" height="680"></iframe>
+        <div id="cont2"  style="display:block">
+            　 <iframe src="PersonalCenter.jsp" name="AdmCenter"  width="1200px" height="680"></iframe>
         </div>
         <div id="cont3" style="display:none">
-            　 <iframe name="AdmServlet?flag=3" width="1200px" height="680"></iframe>
+            　 <iframe name="AdmAllEvaluate" width="1200px" height="680"></iframe>
         </div>
-
     </div>
 </div>
 </body>

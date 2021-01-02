@@ -27,24 +27,44 @@ public class Visitor_showOrderServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session=request.getSession();
-
-        String id=request.getParameter("demand_id");//获得需要查看的订单的需求ID
-        int demand_id=Integer.parseInt(id);
-
-        OrderDao od=new OrderDao();
-        Order order=od.getOneOrderfromDemID(demand_id);//根据需求id找到订单
-
-        if(order.getIsEva()==1){//如果有评论
-            EvaluateDao ed=new EvaluateDao();
-            List<Evaluate> orderAllEva = ed.getOrderAllEva(order.getOrder_id());
-            session.setAttribute("orderAllEva",orderAllEva);//更新session中的  eva评论
+        String f=request.getParameter("flag");
+        int flag=Integer.parseInt(f);
 
 
+        if(flag==1){//如果从所有订单页 过来
+            String id=request.getParameter("demand_id");//获得需要查看的订单的需求ID
+            int demand_id=Integer.parseInt(id);
+
+            OrderDao od=new OrderDao();
+            Order order=od.getOneOrderfromDemID(demand_id);//根据需求id找到订单
+
+            if(order.getIsEva()==1){//如果有评论
+                EvaluateDao ed=new EvaluateDao();
+                List<Evaluate> orderAllEva = ed.getOrderAllEva(order.getOrder_id());
+                session.setAttribute("orderAllEva",orderAllEva);//更新session中的  eva评论
+            }
+            session.setAttribute("findOrder",order);
+
+            request.getRequestDispatcher("/visitor_showOrder.jsp").forward(request, response);
+        }else if(flag==2){
+            String id=request.getParameter("id");//获得需要查看的订单的需求ID
+            int order_id=Integer.parseInt(id);
+
+            OrderDao od=new OrderDao();
+            Order order=od.getOneOrder(order_id);//根据需求id找到订单
+
+            if(order.getIsEva()==1){//如果有评论
+                EvaluateDao ed=new EvaluateDao();
+                List<Evaluate> orderAllEva = ed.getOrderAllEva(order.getOrder_id());
+                session.setAttribute("orderAllEva",orderAllEva);//更新session中的  eva评论
+            }
+            session.setAttribute("findOrder",order);
+
+            request.getRequestDispatcher("/visitor_showOrder.jsp").forward(request, response);
         }
 
-        session.setAttribute("findOrder",order);
 
-       request.getRequestDispatcher("/visitor_showOrder.jsp").forward(request, response);
+
 
 
 

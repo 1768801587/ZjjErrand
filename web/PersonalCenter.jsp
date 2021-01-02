@@ -30,9 +30,12 @@
 				<label class="demandWords">密 码:</label><br><br>
 				<input type="text" name="pwd" class="demandText" value="${loginUser.pwd}" /><br><br>
 				
-				<label class="demandWords">用户种类:</label>
-				<label style="position: absolute;left: 220px;top: 375px; font-size: 35px;font-weight: 500;color: aqua">${loginUser.u_type}</label><br> <br>
-				<span style="color: aqua;font-size: 18px">*****(1代表游客用户，2代表跑腿用户)*****</span>
+				<label style="position: absolute;left: 70px;" class="demandWords">用户种类:</label>
+				<label style="position: absolute;left: 185px;top: 380px; font-size: 25px;font-weight: 500;color: aqua">
+					<c:if test="${loginUser.u_type==3}"><span style="width: 50px" class="green">管理员</span></c:if>
+					<c:if test="${loginUser.u_type==2}"><span style="width: 50px" class="green">跑腿用户</span></c:if>
+					<c:if test="${loginUser.u_type==1}"><span style="width: 50px" class="green">游客用户</span></c:if>
+				</label><br> <br>
 				<input class="demandButton" type="submit" value="修 改" />
 			</form>
 		</div>

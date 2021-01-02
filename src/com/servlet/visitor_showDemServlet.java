@@ -25,7 +25,7 @@ public class visitor_showDemServlet extends HttpServlet {
         HttpSession session=request.getSession();
         User user=(User)session.getAttribute("loginUser");//获得当前登录用户
         DemandDao dd = new DemandDao();
-        List<Demand> personalAllDemand = dd.getPersonalDemandAll(user.getU_id());//通过DemandDao对象从数据库中找到所有当前用户发布的需求
+        List<Demand> personalAllDemand = dd.getPersonalDemandAll(user.getU_id());//通过DemandDao对象从数据库中找到当前用户发布的需求
         session.setAttribute("personalAllDemand", personalAllDemand);
 
         request.getRequestDispatcher("/visitor_showDemand.jsp").forward(request, response);

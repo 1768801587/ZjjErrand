@@ -46,7 +46,7 @@ public class EvaluateDao {
         return eva;
     }
 
-    public List<Evaluate> getOrderAllEva(int order_id) {//获取所有用户发布的所有订单
+    public List<Evaluate> getOrderAllEva(int order_id) {//获取当前订单下的所有评论
         List<Evaluate> list = new ArrayList<Evaluate>();
         try {
             DBconn.init();
@@ -68,11 +68,34 @@ public class EvaluateDao {
         }
         return null;
     }
+    public List<Evaluate> getAllEvaluate() {//获取所有用户发布的所有评论
+        List<Evaluate> list = new ArrayList<Evaluate>();
+        try {
+            DBconn.init();
+            ResultSet rs = DBconn.selectSql("select * from `evaluate` ");
+            while(rs.next()){
+                Evaluate eva = new Evaluate();
+                eva.setEva_id(rs.getInt("eva_id"));
+                eva.setU_name(rs.getString("u_name"));
+                eva.setU_id(rs.getInt("u_id"));
+                eva.setOrder_id(rs.getInt("order_id"));
+                eva.setEva_time(rs.getString("eva_time"));
+                eva.setEva_content(rs.getString("eva_content"));
+                eva.setDemand_id(rs.getInt("demand_id"));
+                list.add(eva);
+            }
+            DBconn.closeConn();
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public boolean delete(int id) {
         boolean flag = false;
         DBconn.init();
-        String sql = "delete  from demand where demand_id="+id;
+        String sql = "delete  from `evaluate`e where eva_id="+id;
         int i =DBconn.addUpdDel(sql);
         if(i>0){
             flag = true;
