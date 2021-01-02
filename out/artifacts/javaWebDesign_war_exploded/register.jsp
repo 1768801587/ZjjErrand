@@ -40,7 +40,7 @@
 <body>
 <!-- main -->
 <div class="w3layouts-main">
-    <h1 style="font-weight: 500;">Badge Signup Form</h1>
+    <h1 style="font-weight: 500;">Platform Signup Form<span style="font-size: 25px">————张家界跑腿平台</span></h1>
     <div class="agilesign-form">
         <div class="agileits-top">
             <form action="registerServlet" method="post">
@@ -78,6 +78,9 @@
                 <div class="agileits-bottom">
                     <input type="submit" value="Sign Up">
                 </div>
+                <br>
+                <span>已有账号?</span>
+                <a href="login.jsp">登录</a>
             </form>
         </div>
     </div>

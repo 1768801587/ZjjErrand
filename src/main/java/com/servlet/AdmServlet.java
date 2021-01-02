@@ -64,11 +64,14 @@ public class AdmServlet extends HttpServlet {
                 request.getRequestDispatcher("AdmServlet?flag=1").forward(request, response);
             }
 
-        }else if(flag==6){//删除订单
+        }else if(flag==6){//删除订单  订单删除则对应点需求也删除 ,找到订单中的需求ID，在找到需求，进行删除
             String  id=request.getParameter("order_id");
             int order_id=Integer.parseInt(id);//获取订单ID
             OrderDao od=new OrderDao();
-            if(od.delete(order_id)){
+            Order order=od.getOneOrder(order_id);
+            DemandDao dd=new DemandDao();
+            Demand demand=dd.getOneDemand(order.getDemand_id());
+            if(od.delete(order_id)&&dd.delete(demand.getDemand_id())){
                 System.out.println("Deleted Order Successfully!!");
                 request.getRequestDispatcher("AdmServlet?flag=2").forward(request, response);
             }
