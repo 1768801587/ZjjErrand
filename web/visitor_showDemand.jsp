@@ -46,7 +46,7 @@
 						<input class="submit" type="submit" value="更新"/>
 					    </c:if>
 						<c:if test="${U.order_id!=0}">
-							<a class="a" href="Visitor_showOrderServlet?flag=1&demand_id=${U.demand_id}">查看订单</a>
+							<a class="a" style="color: #87CEEB" href="Visitor_showOrderServlet?flag=1&demand_id=${U.demand_id}">查看订单</a>
 							</c:if>
 
 					</td>

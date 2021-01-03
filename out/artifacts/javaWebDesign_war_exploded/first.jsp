@@ -12,7 +12,10 @@
 <body>
 
 <div class="first">
-    <img src="img/first.jpg">
+    <img src="img/1.jpg">
+    <div class="title">
+        <span>张家界跑腿平台</span>
+    </div>
     <div class="text">
         <br>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;近年来，随着国内都市化的发展，生产生活节奏变快、各种往来频繁。经济
@@ -30,8 +33,7 @@
 					服务的人来说，的确很诱人</span>
     </div>
     <div class="right_text">
-        <span class="right_text_span1">请根据需求</span><br>
-        <span class="right_text_span2">选择用户种类进行登录</span>
+        <span class="right_text_span1">进行登录/注册</span>
     </div>
 
     <div class="login">

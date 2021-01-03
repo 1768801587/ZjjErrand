@@ -20,7 +20,7 @@
 </head>
 
 <body>
-<div class="visitor" style="width:630px;float:left;height:500px;">
+<div class="visitor">
     <div class="top">
         <span class="zjj">张 家 界 跑 腿 平 台</span>
         <span class="zjj1">(跑腿)</span>

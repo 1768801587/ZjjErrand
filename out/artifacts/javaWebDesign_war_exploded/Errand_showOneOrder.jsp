@@ -12,7 +12,7 @@
     <%--    <link rel="stylesheet" type="text/css" href="css/visitor_showDemand.css"/>--%>
 </head>
 <body>
-<table class="table"  border="1" cellpadding="0" cellspacing="0" >
+<table class="table"  border="1" cellpadding="0" cellspacing="0"   style="table-layout:fixed; background-color: #5F9EA0;filter: alpha(opacity=100);opacity: 0.9;">
     <tr class="firstRow">
         <th>订单ID</th>
         <th>需求ID</th>
@@ -35,7 +35,7 @@
     </tr>
 </table>
 
-<table class="table1"  border="1" cellpadding="0" cellspacing="0">
+<table class="table1"  border="1" cellpadding="0" cellspacing="0"   style="table-layout:fixed; background-color: #5F9EA0;filter: alpha(opacity=100);opacity: 0.9;">>
     <tr>
         <th>接受者姓名</th>
         <th>完成时间</th>
@@ -56,9 +56,9 @@
     </tr>
 </table>
 <hr>
-<div class="evaluateContent" style=" border-color: #FFFFFF;border:1px;width: 500px" >
+<div class="evaluateContent"  style="background-color: wheat;filter: alpha(opacity=100);opacity: 0.9; border: 1px #FFFFFF;width: 500px" >
 
-    <span>评论：</span><br>
+    <span><h2>评论：</h2></span>
 
     <c:if test="${oneOrder.isEva==1}">
         <c:forEach var="U" items="${oneOrderAllEva}"  >
@@ -77,13 +77,13 @@
 
         </c:forEach>
     </c:if>
+    <div>
+        <br><hr><br>
 
+        <a style="font-size: larger;color:black" href="Errand_showOrdServlet?step=1">返回上一级</a>
+    </div>
 
 </div>
-<div>
-    <br><hr><br>
 
-    <a style="font-size: larger;color:black" href="Errand_showOrdServlet?step=1">返回上一级</a>
-</div>
 </body>
 </html>

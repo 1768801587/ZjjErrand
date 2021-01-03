@@ -12,7 +12,14 @@
                 background-color: whitesmoke;
                 position: relative;
             }
-
+    .first .title span{
+        position: absolute;
+        left: 780px;
+        top: 80px;
+        font-size: 50px;
+        font-weight: 700;
+        color: whitesmoke;
+    }
     .first>img {
                 height: 850px;
                 position: absolute;
@@ -27,61 +34,56 @@
 
     .first .text {
                 position: absolute;
-                background-color: skyblue;
                 height: 450px;
                 width: 900px;
-                top: 220px;
+                top: 270px;
                 left: 300px;
-                filter: alpha(opacity=80);
-                /*透明度*/
-                /*IE*/
-                opacity: 0.7;
-                /*Mozilla*/
+        box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.5);
+        filter: alpha(opacity=80);
+        /*透明度*/
+        /*IE*/
+        opacity: 0.7;
+        /*Mozilla*/
+
             }
 
     .first .text>span {
 
                 font-size: 28px;
+                color: whitesmoke;
                 font-weight: 100;
-                color: #000000;
+
 
             }
 
     .first .login {
                 position: absolute;
                 left: 1270px;
-                top: 300px;
+                top: 400px;
                 width: 340px;
                 height: 200px;
-                background-color: plum;
                 text-align: center;
                 box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.8);
-                filter: alpha(opacity=80);
-                /*透明度*/
-                /*IE*/
-                opacity: 0.7;
-                /*Mozilla*/
+                background: none;
             }
 
     .first .right_text {
                 position: absolute;
-                right: 330px;
-                top: 210px;
+                right: 390px;
+                top: 300px;
                 font-size: 30px;
                 font-style: initial;
+              color: #FF9800;
             }
 
-    .first .right_text .right_text_span1 {
-                position: absolute;
-                left: 75px;
-            }
 
    .first .login>a {
                font-size: 30px;
+             color: whitesmoke;
 
            }
 
  .first .login>a:hover {
                 font-size: 35px;
-              color: #0A7369;
+              color: wheat;
             }

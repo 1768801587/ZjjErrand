@@ -12,8 +12,8 @@
     <%--    <link rel="stylesheet" type="text/css" href="css/visitor_showDemand.css"/>--%>
 </head>
 <body>
-<table class="table"  border="1" cellpadding="0" cellspacing="0" >
-    <tr class="firstRow">
+<table class="table"  border="1" cellpadding="0" cellspacing="0" width="1000px"  style="table-layout:fixed; background-color: #5F9EA0;filter: alpha(opacity=100);opacity: 0.9;">
+    <tr style="height: 50px" class="firstRow">
         <th>订单ID</th>
         <th>需求ID</th>
         <th>发布者姓名</th>
@@ -23,7 +23,7 @@
         <th>发布时间</th>
         <th>接单时间</th>
     </tr>
-    <tr class="secondRow">
+    <tr style="height: 50px" class="secondRow">
         <td>${findOrder.order_id}</td>
         <td>${findOrder.demand_id}</td>
         <td>${findOrder.f_name}</td>
@@ -35,7 +35,7 @@
     </tr>
 </table>
 
-<table class="table1"  border="1" cellpadding="0" cellspacing="0">
+<table class="table1"  border="1" cellpadding="0" cellspacing="0"  style="table-layout:fixed; background-color: #5F9EA0;filter: alpha(opacity=100);opacity: 0.9;">
     <tr>
         <th>接受者姓名</th>
         <th>完成时间</th>
@@ -53,7 +53,7 @@
     </tr>
 </table>
 <hr>
-<div class="evaluateContent" style=" border-color: #FFFFFF;border:1px;width: 300px" >
+<div class="evaluateContent" style="background-color: wheat;filter: alpha(opacity=100);opacity: 0.9; border: 1px #FFFFFF;width: 300px" >
     <h3>评论</h3>
     <form action="Visitor_EvaluateServlet?step=2" method="post">
 
@@ -61,9 +61,11 @@
         <hr>
         <input type="submit" value="提交"/>
     </form>
+
+    <div>
+        <a style="font-size: larger;color:black" href="Visitor_showOrderServlet?flag=2&id=${findOrder.order_id}">返回上一级</a>
+    </div>
 </div>
-<div>
-    <a style="font-size: larger;color:black" href="Visitor_showOrderServlet?flag=2&id=${findOrder.order_id}">返回上一级</a>
-</div>
+
 </body>
 </html>

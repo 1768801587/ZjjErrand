@@ -12,8 +12,8 @@
     <%--    <link rel="stylesheet" type="text/css" href="css/visitor_showDemand.css"/>--%>
 </head>
 <body>
-<table class="table"  border="1" cellpadding="0" cellspacing="0" >
-    <tr class="firstRow">
+<table class="table"   border="1" cellpadding="0" cellspacing="0" width="800px"  style="table-layout:fixed; background-color: #5F9EA0;filter: alpha(opacity=100);opacity: 0.9;">
+    <tr style="height: 50px" class="firstRow">
         <th>订单ID</th>
         <th>需求ID</th>
         <th>发布者姓名</th>
@@ -35,8 +35,8 @@
     </tr>
 </table>
 
-<table class="table1"  border="1" cellpadding="0" cellspacing="0">
-    <tr>
+<table class="table1"   border="1" cellpadding="0" cellspacing="0"   style="table-layout:fixed; background-color: #5F9EA0;filter: alpha(opacity=100);opacity: 0.9;">
+    <tr style="height: 50px">
         <th>接受者姓名</th>
         <th>完成时间</th>
         <th>是否已完成</th>
@@ -59,9 +59,9 @@
     </tr>
 </table>
 <hr>
-<div class="evaluateContent" style=" border-color: #FFFFFF;border:1px;width: 500px" >
+<div class="evaluateContent" style="background-color: wheat;filter: alpha(opacity=100);opacity: 0.9; border: 1px #FFFFFF;width: 500px" >
 
-    <span>已有评论</span><br>
+    <h2>已有评论</h2>
 
     <%--    如果订单已评论，则循坏打印出--%>
     <c:if test="${findOrder.isEva==1}">
@@ -73,18 +73,18 @@
                 <span>${U.eva_content}</span>
                 <span>—————${U.eva_time}</span>
             </c:if><%--判断是否已经有评论,--%>
-            <br>
             <hr>
         </c:forEach>
     </c:if>
     <c:if test="${findOrder.isEva==0}">
         <span><b>暂时还没有评论</b></span>
     </c:if>
-</div>
-<div>
-    <br><hr><br>
+    <div>
+        <br><hr><br>
 
-    <a style="font-size: larger;color:wheat" href="AdmServlet?flag=2">返回上一级</a>
+        <a style="font-size: larger;color:black" href="AdmServlet?flag=2">返回上一级</a>
+    </div>
 </div>
+
 </body>
 </html>
